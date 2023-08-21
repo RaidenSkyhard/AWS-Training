@@ -302,7 +302,49 @@ En la parte más baja de la pirámide está el **IaaS** Infrastructure as a Serv
 Son los modos que siguen usando las empresas para hacer deploy
 
 
+| Cloud                                                                                                                                                                                                 | Hybrid                                                                                                                                                                                                                                                                                                                                                                         | On-Premise (server local)                                                                                                                                                                                                                                                              |
+|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------:|
+| Fully utilizing cloud computing.                                                                                                                                                                      | Using both Cloud and On-Premise.                                                                                                                                                                                                                                                                                                                                               | Deploying resources on-premises, using virtualization and resource management tools, is sometimes called "private cloud".                                                                                                                                                              |
+| Basecamp / Dropbox / Squarespace                                                                                                                                                                      | CIBC / Deloitte / CPP Investment Board                                                                                                                                                                                                                                                                                                                                         | Hospitals / AIG / Government                                                                                                                                                                                                                                                           |
+| Companies that are starting out today, or are small enough to take the leap from a VPS (Virtual Private Server) to a CSP. // Perfecto para compañías nuevas o que sean muy pequeñas para usar un CSP. | Organizations that started with their own datacenter, can't fully move to cloud due to the effort of migration or security compliance.// Es para organizaciones que ya dieron el salto a tener sus servers y centros de datos pero que no pueden migrar todo completamente a la nube debido a que tienen mucha data vieja o que comprometería la seguridad de la organización. | Organizations that cannot run on cloud due to strict regulatory compliance or the sheer size of their organization. // Organizaciones que no pueden depender de la nube debido a la confidencialidad de los datos, o que son muy pinches dinosaurios para entender el pedo de la nube. |
+| Startups / SaaS offerings / New Projects and companies.                                                                                                                                               | Banks / FinTech, Investment Management / Large Professional Service Providers / Legacy on-premise.                                                                                                                                                                                                                                                                             | Public                                                                                                                                                                                                                                                                                 |
 
+
+== No hay una razón específica para seguir On-Premise, ya se puede hacer todo con cloud o hybrid==
+
+
+## Getting Started
+
+### Create an AWS Account
+
+Access [AWS](aws.amazon.com) and create your account, is important to have a **Credit Card** to be able to access.
+Generalmente no queremos estar usando la root console a la que accedemos con el mail, más que para usos muy particulares.
+
+Ir a IAM, configurar el MFA, añadir un alias (esto hace mucho más sencillo entrar a la consola con un nombre fácil de recordar), ir a users, añadir un nuevo user, crear un grupo de administrator access, se crea el usuario y listo 
+
+Para acceder ahora, vas a [AWS](aws.amazon.com) y accedes con el alias, posteriormente con el nombre y contraseña de la cuenta que creaste
+
+—
+
+### AWS Region Selector
+
+La región se cambia nadamás entrar, por lo regular me pone en Ohio.
+Se recomienda estar en US East 1 (N. Virginia).
+Hay algunos servicios que no requieren una selección de región como S3 y otros que sí como EC2.
+
+—
+
+### Overbilling Story
+
+La diferencia principal de los Cloud Services con respecto a como se manejan otras web, es que te cobran por uso variando en lo que uses, de modo que si no configuras algo bien puede resultar en un cobro extremadamente costoso.
+
+Si por alguna razón te equivocas y la cagas, puedes ir a support center y levantar un ticket para aclarar que pasó.
+
+—
+
+###  AWS Budget (cómo hacer un presupuesto)
+
+Cómo protegerse para no recibir un gasto cabrón.
 
 
 —
@@ -354,52 +396,3 @@ AWS Bracket Via CalTech
 ### Amazon Braket
 
 Es para cloud computing
-
-
-
-
-
-
-
-—
-
-### Scaling Amazon EC2
-
-Escalabilidad y Flexibilidad, cómo puedes hacer que la capacidad de tus centros de datos se adapten a tus necesidades basado en tus horas o periodos de tiempo de uso.
-Las empresas que contratan o usan On-Demand no tienen forma de adaptar su capacidad al uso, debido a que siempre están págando por el 100% del hardware, aún cuando muchas veces no usen ni el 10% de todo su poder.
-AWS permite utilizar los recursos para mantener el servicio activo, corriendo y adaptable sin puntos de falla.
-Amazon EC2 tiene una función llamada **EC2 Auto Scaling** para satisfacer esa necesidad.
-
-Within Amazon EC2 Auto Scaling, you can use two approaches: dynamic scaling and predictive scaling.
-
-* _Dynamic scaling_ responds to changing demand. 
-* _Predictive scaling _automatically schedules the right number of Amazon EC2 instances based on predicted demand.
-
-**Tipos de escalabilidad**
-
-- Vertical or scale up: meterle más recursos a la máquina que está corriendo el servicio. (Por sentido común sería lo óptimo, pero la mejor forma de verlo es imaginar una cafetería, con un cajero muy chingón pero que tiene que atender a un cliente bien wey teniendo una fila enorme de clientes esperando).
-- Horizontal: añadir más computadoras para atender la carga de trabajo. Deja de ser óptimo cuando hay pocos clientes.
-
-La ventaja que ofrece AWS es que permite tener el número correcto de instancias en el momento que los necesitas, de modo que las utilices del modo más eficiente.
-
-**Concepto del Auto Scaling Group de EC2**
-
-Puedes crear tu Auto Scaling Group, en el que estableces un mínimo, un deseado, y una capacidad máxima de instancias de EC2 que van a correr de acuerdo a la demanda de usuarios.
-El mínimo son las instancias que van a iniciar nadamás encender el auto scaling group.
-El desired van a correr en cuanto se superen las capacidades del minimo.
-Y maximo solo durante picos de demanda.
-
-
-### Directing Traffic with Elastic Load Balancing
-
-Volvemos al ejemplo de la cafetería, supongamos que la gente está pendeja y todos se van a ser atendidos con el mismo cajero, dejando a los demás sin hacer nada. El problema es resuelto poniendo a alguien en la entrada a que cuente cuántas personas está atendiendo cada cajero para que los reparta de modo que sea eficiente.
-
-A esto se le conoce en computación como un Load Balancer, debido a que todas las instancias deberían de ser capaces de correr lo mismo con la misma eficiencia. AWS ofrece varias soluciones para ello.
-
-Tener un tráfico adecuado permite tener alto rendimiento, mayor eficiencia de costos, alta disponibilidad y escalamiento auitomático.
-
-**Elastic Load Blancing** ELB, es uno de los que vamos a aprender. 
-Regional construct, corre a nivel región, de modo que siempre está disponible. 
-Es escalable, aumenta su capacidad conforme al número de demanda de usuarios.
-ELB permite solicitar más y menos instancias de acuerdo a la demanda.
-Funciona como un "puente" entre el frontend y el backend, en el que manda de forma ordenada las solicitudes al backend, y se entera de las capacidades del backend para distribuir mejor el tráfico de red. ESTO EVITA QUE CUANDO UNA INSTANCIA NUEVA SE ENCIENDA, NO SE TENGA QUE MANDAR ESA INFORMACIÓN AL FRONTEND, SOLAMENTE EL LOAD BALANCER SE ENTERA. El front end solamente se encarga de mandar solicitudes, no le importa quién las procese,

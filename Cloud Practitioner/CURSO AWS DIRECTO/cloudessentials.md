@@ -366,3 +366,37 @@ AWS CloudFormation provisions your resources in a safe, repeatable manner, enabl
 
 # Networking
 
+Vamos a aprender:
+
+* Describe the basic concepts of networking.
+* Describe the difference between public and private networking resources. 
+* Explain a virtual private gateway using a real life scenario. 
+* Explain a virtual private network (VPN) using a real life scenario.
+* Describe the benefit of AWS Direct Connect. 
+* Describe the benefit of hybrid deployments. 
+* Describe the layers of security used in an IT strategy.
+* Describe the services customers use to interact with the AWS global network.
+
+Volviendo al ejemplo de cafetería, imaginemos que hay gente que quiere pedirle las cosas directo al wey que prepara el café en lugar de al cajero. No tiene sentido porque ese bato debe estar concentrado haciendo café.
+
+**Amazon Virtual Private Cloud (Amazon VPC)**: Nos da una sección de red completamente aislada para los servicios de AWS Cloud, se puede definir qué servicios pueden ser públicos o privados a internet.
+
+—
+
+## Connectivity to AWS
+
+
+**Virtual Private Cloud (VPC)**: es en esencia nuestra red privada, permite definir el rango de IPs privadas.
+
+**Subnets**: control resources
+
+**Public traffic**:
+
+**Internet Gateway (IGW)**: una "puerta" donde puede acceder todo el mundo, incluido el tráfico público, como la entrada principal de una cafetería.
+
+**Virtual Private Gateway**: puerta que solo permitirá entrar a ciertos usuarios conectados a una red, puede ser mediante una VPN corporativa. *Ejemplo: imaginemos que mi empresa tiene transporte directo a la cafetería, y para acceder a ella debo autenticarme*.
+Sigue contando con la desventaja de seguir corriendo sobre el internet público y dependiendo del ancho de banda del internet. AWS lo soluciona con una conexión dedicada a los recursos.
+
+### AWS Direct Connect
+
+Permite establecer una conexión de fibra óptica privada y dedicada desde tu datacenter a AWS. Es una conexión física real y elimina los problemas de ancho de banda.

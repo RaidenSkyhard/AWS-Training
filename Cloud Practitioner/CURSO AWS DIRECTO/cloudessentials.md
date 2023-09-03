@@ -400,3 +400,47 @@ Sigue contando con la desventaja de seguir corriendo sobre el internet público 
 ### AWS Direct Connect
 
 Permite establecer una conexión de fibra óptica privada y dedicada desde tu datacenter a AWS. Es una conexión física real y elimina los problemas de ancho de banda.
+
+—
+
+## Subnets and Network Access Control Lists
+
+Imaginemos a la VPC como una fortaleza en donde nada entra o sale sin estricto control. Pero eso solo cubre el perímetro.
+
+AWS tiene varias herramientas para cubrir varios aspectos de la seguridad:
+
+* Network hardening
+* Application security
+* User identity
+* Authentication and authorization
+* Distributed denial of service prevention
+* Data integrity
+* Encryption
+
+La única razón para tener subnets dentro de una VPC es para controlar el acceso a la IGW de la VPC, Las Public subnets SI TIENEN acceso  a la IGW, las Private subnets NO TIENEN ACCESO.
+
+![a79f42108924d1082acdd8eb8415db90.png](a79f42108924d1082acdd8eb8415db90.png)
+
+Las subnets también pueden controlar el tráfico de red.
+**Packets**: mensajes de internet.
+Cada packet que quiera acceder a la subnet, tiene que pasar por una **Network access control list** (Network ACL) el cual checa si tiene permisos para entrar o salir dependiendo de su información, contenido, quién lo envió, etc.
+Se pueden imaginar visualmente como un oficial de migración que revisa tu pasaporte.
+Sin embargo, ESTO NO GARANTIZA TOTAL SEGURIDAD, es solo una capa más.
+
+Las instancias de EC2 dentro de una subnet a su vez, forman parte de un Security Group que se crea nadamás lanzar la instancia. POR DEFAULT LAS INSTANCIAS NO PERMITEN NINGUNA CLASE DE COMUNICACIÓN, ES MUY SEGURO PERO NO ES MUY USABLE.
+Esto es configurable, por ejemplo, puedes solo admitir tráfico de determinada página web y rechazar cualquier cosa que pida credenciales de administrador.
+
+**DIFERENCIA ENTRE UN SECURITY GROUP Y UN NETWORK ACL**
+
+El security group es Stateful, lo que significa que va a almacenar en memoria lo que debe admitir o no, como una lista.
+El network ACL es Stateless, lo que se traduce en que sin importar las circunstancias, siempre va a revisar el contenido de los packages recibidos.
+
+El security group es como un guardia en la entrada al que le dices "ahorita regreso" mientras que el network ACL es más como el wey de migración que siempre checa si puedes entrar o no al gabacho.
+
+—
+
+## Global networking
+
+
+
+

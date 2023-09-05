@@ -493,4 +493,29 @@ In this module, you will learn how to:
 
 ---
 
-##
+## Instance Stores and Amazon Elastic Block Store (Amazon EBS)
+
+Las instancias de EC2 proveen de todos los recursos básicos de una computadora, pero nos vamos a concentrar en el ALMACENAMIENTO.
+
+**Block Level Storage**: imaginemoslo como un mueble donde organizar archivos, de modo que este almacenamiento lo que hace es que solo se actualiza o mueve los componentes que son necesarios mover, haciéndolo de forma más eficiente.
+
+La naturaleza **temporal** de las instancias de EC2 (**Instance Stores**)impide que se utilicen para almacenar archivos debido a que cuando se enciendan y apaguen, van a iniciar en otro host.
+
+
+### Amazon Elastic Block Store (EBS)
+
+Nos permite crear discos duros virtuales, los cuales llamamos "EBS Volumes" que se pueden conectar con nuestra instancia de EC2.
+Significa que estos datoa SI VAN A PERSISTIR aún cuando se reinicie la instancia.
+
+Su objetivo es crear un disco duro persistente para tus instancias de EC2.
+
+Permite tener backups de tu información llamadas "snapshots". De ese modo, si se corrompe o algo falla en el disco, puedes tomar la snapshot.
+
+An **EBS snapshot** is an incremental backup. This means that the first backup taken of a volume copies all the data. For subsequent backups, only the blocks of data that have changed since the most recent snapshot are saved. 
+
+Incremental backups are different from full backups, in which all the data in a storage volume copies each time a backup occurs. The full backup includes data that has not changed since the most recent backup.
+
+---
+
+## Amazon Simple Storage Service (Amazon S3)
+

@@ -441,6 +441,56 @@ El security group es como un guardia en la entrada al que le dices "ahorita regr
 
 ## Global networking
 
+No se ha hablado de como customizar tu infraestructura de AWS.
+
+### Amazon Route 53
+
+Maneja lo DNS (Domain Name Servers), se puede entender como un servicio de "traducción" de dominios a direcciones IP.
+Por ejemplo:
+![route 53 example](image.png)
+
+![dns example](image-1.png)
+Un usuario escribe un nombre de dominio como www.dominio.com y esto le indica a Amazon Route 53 que debe buscar la dirección IP ligada a ese dominio y le devuelve la información de esa IP además maneja el tráfico basándose en varias políticas como:
+
+- Latency-based routing
+- Geolocation DNS
+- Geoproximity routing
+- Weighted round robin
+
+Significa que **puedes comprar y manejar tu dominio desde AWS**.
+
+**Ejemplo: como Route 53 y Cloudfront mandan información**
+
+![route 53 y cloudfront](image-2.png)
+
+Suppose that AnyCompany’s application is running on several Amazon EC2 instances. These instances are in an Auto Scaling group that attaches to an Application Load Balancer. 
 
 
+A customer requests data from the application by going to AnyCompany’s website. 
 
+Amazon Route 53 uses DNS resolution to identify AnyCompany.com’s corresponding IP address, 192.0.2.0. This information is sent back to the customer. 
+
+The customer’s request is sent to the nearest edge location through Amazon CloudFront. 
+
+Amazon CloudFront connects to the Application Load Balancer, which sends the incoming packet to an Amazon EC2 instance.
+
+
+---
+
+# Storage and Databases
+
+In this module, you will learn how to:
+
+    Summarize the basic concept of storage and databases.
+    Describe the benefits of Amazon Elastic Block Store (Amazon EBS).
+    Describe the benefits of Amazon Simple Storage Service (Amazon S3).
+    Describe the benefits of Amazon Elastic File System (Amazon EFS).
+    Summarize various storage solutions.
+    Describe the benefits of Amazon Relational Database Service (Amazon RDS).
+    Describe the benefits of Amazon DynamoDB.
+    Summarize various database services.
+
+
+---
+
+##

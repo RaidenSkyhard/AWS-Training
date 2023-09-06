@@ -519,3 +519,193 @@ Incremental backups are different from full backups, in which all the data in a 
 
 ## Amazon Simple Storage Service (Amazon S3)
 
+Permite almacenar y solicitar una cantidad ilimitada de datos.
+
+- Los datos/archivos se almacenan como "objetos"
+![e46743a785d98d27d9db90cf91d8cb97.png](e46743a785d98d27d9db90cf91d8cb97.png)
+In **object storage**, each object consists of data, metadata, and a key.
+The data might be an image, video, text document, or any other type of file. Metadata contains information about what the data is, how it is used, the object size, and so on. An object’s key is its unique identifier.
+
+- Los objetos se almacenan en buckets ("directorios")
+- El tamaño máximo que puede tener un objeto es de 5TB
+- Tienes versiones del objeto para poder volverlo a una versión anterior en caso de cualquier error
+- Puedes tener varios buckets en donde puedes limitar qué usuarios tienen acceso a esos datos
+
+Puedes darle a la data diferentes "tiers" de acuerdo a su caso de uso, no es lo mismo una data que se modifica a diario y requiere constante acceso, a una data que requiere mantenerse igual durante años.
+
+* **Amazon S3 standard**: significa que tiene 99.99999999% de durabilidad tras un año. Designed for frequently accessed data. Stores data in a minimum of three Availability Zones. This makes it a good choice for a wide range of use cases, such as websites, content distribution, and data analytics. Es más caro que otras tiers para acceso de datos y archivos.
+* **Amazon S3 static website hosting**: es una colección de HTMLs para un sitio web.
+* **Amazon S3 Standard-Infrequent Access (S3 Standard-IA)**: se usa para data que no se utiliza mucho pero cuando se requiere se tiene que pullear rápido, es ideal para backups o desastres. Amazon S3 Standard-IA is ideal for data infrequently accessed but requires high availability when needed. Both Amazon S3 Standard and Amazon S3 Standard-IA store data in a minimum of three Availability Zones. Amazon S3 Standard-IA provides the same level of availability as Amazon S3 Standard but with a lower storage price and a higher retrieval price.
+* **Amazon S3 One Zone-Infrequent Access (S3 One Zone-IA)**: Compared to S3 Standard and S3 Standard-IA, which store data in a minimum of three Availability Zones, S3 One Zone-IA stores data in a single Availability Zone. This makes it a good storage class to consider if you want to save costs on storage and you can easily reproduce your data in the event of an availability zone failure.
+* **Amazon S3 Intelligent-Tiering**: Ideal for data with unknown or changing access patterns. Requires a small monthly monitoring and automation fee per object. Monitorea solito la data que estás utilizando y la mueve a los tiers que más le convengan de acuerdo a su uso.
+* **Amazon S3 Glacier Instant retrieval**: When you decide between the options for archival storage, consider how quickly you must retrieve the archived objects. You can retrieve objects stored in the S3 Glacier Instant Retrieval storage class within milliseconds, with the same performance as S3 Standard.
+* **Amazon S3 Glacier Flexible Retrieval**: Para el caso en el que se requiera mantener datos durante una cantidad determinada de tiempo, con opciones de acceso limitado e incluso la opción de "bloquear" el acceso a la data para su modificación. WORM: Write once/Read many
+* **Amazon S3 Glacier Deep Archive**: S3 Deep Archive supports long-term retention and digital preservation for data that might be accessed once or twice in a year. This storage class is the lowest-cost storage in the AWS Cloud, with data retrieval from 12 to 48 hours. All objects from this storage class are replicated and stored across at least three geographically dispersed Availability Zones.
+* **Amazon S3 Outposts**: Amazon S3 Outposts delivers object storage to your on-premises AWS Outposts environment. Amazon S3 Outposts is designed to store data durably and redundantly across multiple devices and servers on your Outposts. It works well for workloads with local data residency requirements that must satisfy demanding performance needs by keeping data close to on-premises applications.
+
+
+### Amazon EBS vs S3
+
+**EBS**
+
+- Máximo 16TB
+- Data de la instancia de EC2 persiste
+- SSD por default
+- Opciones de uso de HDD
+
+
+**S3**
+
+- Almacenamiento ilimitado
+- Objetos individuales de máximo 5TB
+- Especializado en WORM
+- 99.999999999% durabilidad de datos
+
+---
+
+## Amazon Elastic File System (Amazon EFS)
+
+Is a scalable file system used with AWS Cloud services and on-premises resources. As you add and remove files, Amazon EFS grows and shrinks automatically. It can scale on demand to petabytes without disrupting applications. 
+
+EFS permite que varias instancias accesen a los mismos archivos al mismo tiempo. La diferencia principal con EBS es que:
+
+- EBS está ligada a una sola instancia.
+- Es un recurso que está en una sola AZ y está ligada a las instancias de EC2 de esa zona.
+- Los volúmenes no escalan automáticamente.
+
+Mientras que EFS:
+
+- Varias instancias pueden trabajar ahí
+- Corren sobre Linux
+- Recurso regional
+- Escala automáticamente
+
+---
+
+## Amazon Relational Database Service (Amazon RDS)
+
+Is a service that enables you to run relational databases in the AWS Cloud.
+
+Amazon RDS is a managed service that automates tasks such as hardware provisioning, database setup, patching, and backups. With these capabilities, you can spend less time completing administrative tasks and more time using data to innovate your applications. You can integrate Amazon RDS with other services to fulfill your business and operational needs, such as using AWS Lambda to query your database from a serverless application.
+
+Amazon RDS provides a number of different security options. Many Amazon RDS database engines offer encryption at rest (protecting data while it is stored) and encryption in transit (protecting data while it is being sent and received).
+
+
+**Relational databases**
+
+In a relational database, data is stored in a way that relates it to other pieces of data. 
+
+Relational databases use structured query language (SQL) to store and query data. This approach allows data to be stored in an easily understandable, consistent, and scalable way. For example, the coffee shop owners can write a SQL query to identify all the customers whose most frequently purchased drink is a medium latte.
+
+
+Databases que soporta AWS:
+
+- MySQL
+- PostgreSQL
+- Oracle
+- Microsoft SQL Server
+- MariaDB
+- Amazon Aurora
+
+
+Lift-and-shift migration
+
+RDS permite:
+
+- Automated patching
+- Backups
+- Redundancy
+- Failover
+- Disaster recovery
+
+
+### Amazon Aurora
+
+Amazon Aurora is an enterprise-class relational database. It is compatible with MySQL and PostgreSQL relational databases. It is up to five times faster than standard MySQL databases and up to three times faster than standard PostgreSQL databases.
+
+Amazon Aurora helps to reduce your database costs by reducing unnecessary input/output (I/O) operations, while ensuring that your database resources remain reliable and available. 
+
+Consider Amazon Aurora if your workloads require high availability. It replicates six copies of your data across three Availability Zones and continuously backs up your data to Amazon S3.
+
+- MySQL
+- PostgreSQL
+- 1/10 del costo de las databases comerciales
+- Data replication
+- Up to 15 read replicas
+- Continuos backup to S3
+- Point-on-time recovery
+
+---
+
+## Amazon DynamoDB
+
+Is a key-value database service. It delivers single-digit millisecond performance at any scale.
+
+Is serverless, lo que significa que tú no debes preocuparte por proveer o manejar el server, solamente preocúpate por la data de tu DB.
+Tiene automatic scalling, se ajusta automáticamente al rendimiento que requiera tu sitio.
+
+
+**Nonrelational databases**
+
+In a nonrelational database, you create tables. A table is a place where you can store and query data.
+
+Nonrelational databases are sometimes referred to as “NoSQL databases” because they use structures other than rows and columns to organize data. One type of structural approach for nonrelational databases is key-value pairs. With key-value pairs, data is organized into items (keys), and items have attributes (values). You can think of attributes as being different features of your data.
+
+In a key-value database, you can add or remove attributes from items in the table at any time. Additionally, not every item in the table has to have the same attributes.
+
+*Ejemplo de una DB no relacional*:
+![non relational db](image-3.png)
+
+
+---
+
+## Amazon Redshift
+
+Is a data warehousing service that you can use for big data analytics. It offers the ability to collect data from many sources and helps you to understand relationships and trends across your data.
+
+El problema con utilizar las DB tradicionales para un análisis de uso de las DB, es que la variedad de datos y la característica de que se usan todo el tiempo (históricos) puede hacer muy complicada su consulta.
+
+
+---
+
+## Amazon Database Migration Service (Amazon DMS)
+
+Enables you to migrate relational databases, nonrelational databases, and other types of data stores.
+
+With AWS DMS, you move data between a source database and a target database. The source and target databases(opens in a new tab) can be of the same type or different types. During the migration, your source database remains operational, reducing downtime for any applications that rely on the database.
+
+
+Casos de uso para AWS DMS:
+
+- Development and test database migrations: permite que los devs prueben aplicaciones con datos diferentes a los de production sin romper nada.
+- Database consolidation: combinar varias DB en una.
+- Continuos replication: que se manden varias copias de la DB a otros lugares en lugar de solo hacer una migración solita.
+
+
+---
+
+## Additional Database Services
+
+### Amazon DocumentDB (with MongoDB compatibility)
+Es chido para manejo de contenido como catálogos de servicios o productos
+
+### Amazon Neptune
+Database gráfica, muy útil para redes sociales, detección de fraudes, gráficas de knowledge y motores de recomendaciones
+
+### Amazon Quantum Ledger Database (Amazon QLDB)
+Cadenas de inventario o bancos que requieren un 100% de inmutabilidad y total confianza en los datos. Sistema inmutable.
+You can use Amazon QLDB to review a complete history of all the changes that have been made to your application data.
+
+### Amazon Managed Blockchain
+Pa la blockchain
+
+
+### Database accelerators
+
+**Elastic cache**: para ver la data más utilizada sin estarla consultando a cada rato, si no tomarla de la caché.
+**DynamoDB Accelerator (DAX)**: acelera las DB de DynamoDB con cache.
+
+
+---
+
+# Security 

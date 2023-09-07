@@ -853,3 +853,41 @@ Enlista todos los findings referentes a seguridad y los ordena de acuerdo al niv
 Is a service that provides intelligent threat detection for your AWS infrastructure and resources. It identifies threats by continuously monitoring the network activity and account behavior within your AWS environment.
 
 GuardDuty analiza constantemente todo el tráfico de red para detectar amenazas y proveer pasos para remediarlo.
+
+
+---
+
+## Monitoring and analytics
+
+In this module, you will learn how to:
+
+- Summarize approaches to monitoring your AWS environment.
+- Describe the benefits of Amazon CloudWatch.
+- Describe the benefits of AWS CloudTrail.
+- Describe the benefits of AWS Trusted Advisor.
+
+**Monitoring**: Observing systems, collecting metrics, and then using data to make decisions
+
+---
+
+## Amazon CloudWatch
+
+Is a web service that enables you to monitor and manage various metrics and configure alarm actions based on data from those metrics.
+
+CloudWatch uses metrics to represent the data points for your resources. AWS services send metrics to CloudWatch. CloudWatch then uses these metrics to create graphs automatically that show how performance has changed over time. 
+
+Es un servicio de AWS que sirve para medir TODO en AWS y basado en esas métricas hacer cosas distintas, como envíar notificaciones y hacer acciones que hayas programado (**CloudWatch Alarms**). Por ejemplo, si una de tus instancias de EC2 tiene un procesador sobre el 90% de uso por dos minutos, puedes programar que abra otra instancia para escalar la potencia.
+
+**Ventajas de usar CloudWatch**
+
+- Accesar a todas tus métricas desde una sola locación centralizada. Aún si son AWS Services o On-Premises
+- Gain visibility into your applications, infrastructure, and services. Sabes qué chingados está pasando en todo momento
+- Reduce MTTR (MeanTime To Resolution) and improve TCO (Total Cost Ownership). Reducir el tiempo en que resuelves los problemas para aumentar el valor de tu negocio.
+- Drive insights to optimize applications and operational resources. Tienes retroalimentación para estar constantemente mejorando y optimizando todos tus recursos de todos los campos.
+
+### CloudWatch alarms
+
+With CloudWatch, you can create alarms that automatically perform actions if the value of your metric has gone above or below a predefined threshold.
+
+### CloudWatch dashboard
+

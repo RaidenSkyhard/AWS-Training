@@ -709,3 +709,57 @@ Pa la blockchain
 ---
 
 # Security 
+
+In this module, you will learn how to:
+
+    Explain the benefits of the shared responsibility model.
+    Describe multi-factor authentication (MFA).
+    Differentiate between the AWS Identity and Access Management (IAM) security levels.
+    Explain the main benefits of AWS Organizations.
+    Describe security policies at a basic level.
+    Summarize the benefits of compliance with AWS.
+    Explain additional AWS security services at a basic level.
+
+---
+
+## AWS Shared Responsibility Model
+
+En AWS se utiliza un modelo de seguridad compartida en el que tanto AWS como el cliente se encargan de atender sus respectivos niveles de seguridad.
+Por ejemplo, en una casa el constructor tiene la responsabilidad de construir paredes, ventanas y una puerta fuertes, mientras que los que la habitan tienen la responsabilidad de cerrar las ventanas y ponerle seguro a la puerta.
+
+![Seguridad en EC2](image-4.png)
+
+![Modelo de responsabilidad compartida](image-5.png)
+
+---
+
+## Permissions and access
+
+Es importante recalcar que se pueden dar determinados accesos desde la cuenta root de AWS a los distintos usuarios para trabajar.
+
+### AWS Identity and Access Management (AWS IAM)
+
+Enables you to manage access to AWS services and resources securely.   
+
+IAM gives you the flexibility to configure access based on your company’s specific operational and security needs. You do this by using a combination of IAM features:
+
+- IAM users, groups, and roles
+- IAM policies
+- Multi-factor authentication
+
+**MEJORES PRÁCTICAS PARA CARACTERÍSTICAS DE AWS IAM**
+
+Cuenta Root
+- Es la cuenta que se crea en base al correo y contraseña de la cuenta de AWS. Cuenta con el mayor nivel de acceso a todo en AWS.
+- Crear un usuario IAM con permisos para crear otros usuarios. Loggearse con el nuevo usuario IAM y limitar el uso de la root account solo para tareas muy muy específicas.
+
+IAM user
+- Identity that you create in AWS. It represents the person or application that interacts with AWS services and resources. It consists of a name and credentials. Por default no tiene ningún permiso, ni siquiera para loggearse, tú debes de darle permisos antes de siquiera acceder.
+- Se recomienda crear usuarios de IAM para cada persona que necesite acceso a los recursos.
+
+IAM policies
+- Documento en JSON que da acceso o lo deniega a ciertos recursos y servicios de AWS. Estos permiten delimitar el nivel de acceso de cada usuario.
+- Se recomienda dar permisos del menor al mayor, de modo que los usuarios no tengan acceso a todos los recursos sin autorización previa.
+
+IAM groups
+- 

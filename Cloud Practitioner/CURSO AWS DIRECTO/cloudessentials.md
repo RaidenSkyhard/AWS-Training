@@ -762,4 +762,94 @@ IAM policies
 - Se recomienda dar permisos del menor al mayor, de modo que los usuarios no tengan acceso a todos los recursos sin autorización previa.
 
 IAM groups
-- 
+- Es un conjunto de usuarios de IAM con ciertos permisos con el objetivo de que las policies de IAM se hagan más fáciles de aplicar a múltiples usuarios.
+
+IAM roles
+- Son "perfiles" con determinados permisos dentro de un perfil de IAM, estos perfiles se asumen de manera temporal para llevar a cabo distintas tareas. Solo se puede tener UN ROL activo a la vez.
+- Son ideales para tareas que se hagan de manera temporal en lugar de las que se llevan a cabo de forma temporal.
+
+
+---
+
+## AWS Organizations
+
+Central location to manage multiple AWS accounts
+
+Puedes manejar todo el aspecto administrativo de las cuentas
+
+- Centalized management
+- Consolidated billing
+- Hierarchical groupings of accounts
+- AWS service and API actions access control. Service Control Policies (SCPs)
+
+### Organizational units
+
+In AWS Organizations, you can group accounts into organizational units (OUs) to make it easier to manage accounts with similar business or security requirements. When you apply a policy to an OU, all the accounts in the OU automatically inherit the permissions specified in the policy.  
+
+By organizing separate accounts into OUs, you can more easily isolate workloads or applications that have specific security requirements. For instance, if your company has accounts that can access only the AWS services that meet certain regulatory requirements, you can put these accounts into one OU. Then, you can attach a policy to the OU that blocks access to all other AWS services that do not meet the regulatory requirements.
+
+
+---
+
+## Compliance
+
+Cumplimiento de normas y leyes.
+
+### AWS Artifact
+
+Servicio que provee acceso a los reportes de seguridad y cumplimiento de acuerdo a las distintas normas internacionales.
+
+**AWS Artifact Agreements** (acuerdos): Aquí puedes revisar, aceptar y manejar los acuerdos para cada cuenta individual y para todas tus cuentas en AWS Organizations. Se ofrecen distintos tipos de acuerdos dependiendo de la regulación que necesiten en específico.
+
+**AWS Artifact Reports**: Es para darle reportes de cumplimiento a auditores third party en caso de que necesiten información específica de las regulatorias que deben cumplir.
+
+
+### Customer Compliance Center
+
+Es un sitio donde se pueden leer y obtener recursos con ejemplos para el cumplimiento de las normas, seguridad, checklists de auditoría, etc.
+
+También tiene un learning path para auditores que que quieran aprender más del cumplimiento que deben tener al auditar la nube de AWS.
+
+---
+
+## Denial of Service Attacks
+
+DDoS: Distributed denial of service
+
+Cuando un wey con una botnet manda chingos de request a tu webpage de modo que se sature el server y no tengas los recursos para proveerle servicios a tus clientes.
+
+### AWS WAF
+Web Application Firewall
+Es un Firewall con IA y ML diseñado para websites que sirve para reconocer patrones de ataque DDoS.
+Permite monitorear las network request que llegan a tus web apps.
+
+### AWS Shield
+
+Es un servicio específicamente diseñado para proteger contra los DDoS. Tiene dos categorías
+
+**Standard** 
+
+Es la protección básica para todos los clientes de AWS sin costo, te protege de los ataques más comunes mediante técnicas de análisis para detectar el tráfico de red malicioso.
+
+**Advanced**
+Es un servicio de pago que provee diagnósticos detallados para mitigar ataques DDoS más sofisticados. Trabaja en conjunto con otros servicios como Route 53, CloudFront y ELB. Adicionalmente se puede usar en conjunto con WAF haciendo reglas específicas para mitigar el ataque.
+
+---
+
+## Additional Security Services
+
+Encryption: Securing a message or data in a way that only authorized parties can access it.
+
+### AWS KMS (Key Management Service)
+
+Enables you to perform encryption operations through the use of cryptographic keys. A cryptographic key is a random string of digits used for locking (encrypting) and unlocking (decrypting) data. You can use AWS KMS to create, manage, and use cryptographic keys. You can also control the use of keys across a wide range of services and in your applications.
+
+### Amazon Inspector
+
+Corre pruebas de seguridad automatizadas en tu infraestructura y te da consejos de cómo mejorarla o resolverla.
+Enlista todos los findings referentes a seguridad y los ordena de acuerdo al nivel de severidad incluyendo la descripción y las recomendaciones.
+
+### Amazon GuardDuty
+Is a service that provides intelligent threat detection for your AWS infrastructure and resources. It identifies threats by continuously monitoring the network activity and account behavior within your AWS environment.
+
+GuardDuty analiza constantemente todo el tráfico de red para detectar amenazas y proveer pasos para remediarlo.

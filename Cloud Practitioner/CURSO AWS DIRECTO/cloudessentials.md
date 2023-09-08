@@ -982,5 +982,3 @@ Es un servicio de AWS en el que puedes planear tu uso de servicio, costos de ser
 
 ## AWS Cost Explorer
 
-sdsds
-

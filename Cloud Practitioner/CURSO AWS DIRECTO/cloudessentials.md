@@ -891,3 +891,49 @@ With CloudWatch, you can create alarms that automatically perform actions if the
 
 ### CloudWatch dashboard
 
+![cloudwatch dashboard](soUHIPDRwFlque1l_rLfuExSsSpuXOVqf.png)
+
+Permite tener las métricas importantes en un solo lugar para mostrarlas de modo bonito.
+
+---
+
+## AWS CloudTrail
+
+Herramienta para auditorías, permite ver específicamente **qué, quien, como y cuándo** se realizó una acción en los servicios de AWS, es súmamente útil para los auditores de seguridad que necesiten ver quienes tienen acceso a los recursos.
+
+Guarda todas las API calls de las cuentas.
+
+"Trail" se traduce como un tipo de estela que se va dejando, de este modo se puede rastrear la actividad de determinado usuario.
+
+Por ejemplo:
+
+![cloudtrail ejemplo](hoK85sdXpmZtnH9K_LpdzY_ElDiXoJpKQ.png)
+
+
+### Cloudtrail Insights
+
+Es una característica adicional de CloudTrail que se pone a chambear cuando detecta actividad inusual de la API en una cuenta de AWS. Por ejemplo, puede detectar si tu cuenta de la nada se puso a lanzar instancias de EC2.
+Puedes tomar esta información como base para saber qué hacer a continuación.
+
+---
+
+## AWS Trusted Advisor
+
+Is a web service that inspects your AWS environment and provides real-time recommendations in accordance with AWS best practices.
+
+Trusted Advisor compares its findings to AWS best practices in five categories:
+
+- Cost optimization
+- Performance
+- Security
+- Fault tolerance
+- Service limits
+
+For the checks in each category, Trusted Advisor offers a list of recommended actions and additional resources to learn more about AWS best practices.
+
+Es un servicio que constantemente va a estar checando tu infraestructura y te dará avisos y recomendaciones de lo qué hacer en cada caso. Puedes redirigir estas alertas a distintos departamentos o personas encargadas.
+
+---
+
+# Pricing and support
+

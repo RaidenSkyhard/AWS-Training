@@ -982,3 +982,108 @@ Es un servicio de AWS en el que puedes planear tu uso de servicio, costos de ser
 
 ## AWS Cost Explorer
 
+Es un servicio de AWS consolidado que sirve para visualizar y analizar tus gastos en AWS a través del tiempo aplicando filtros para obtener datos exactos.
+
+AWS Cost Explorer includes a default report of the costs and usage for your top five cost-accruing AWS services. You can apply custom filters and groups to analyze your data. For example, you can view resource usage at the hourly level.
+
+![cost explorer](4ereR2UkZTRawGBf_pS6DLACY5OOiDZZb.png)
+
+
+---
+
+## AWS Support plans
+
+AWS ofrece soporte a todos sus clientes sin importar su tamaño, pero también ofrece planes de soporte distinto de acuerdo a tus necesidades:
+
+### Basic
+Basic Support is free for all AWS customers. It includes access to whitepapers, documentation, and support communities. With Basic Support, you can also contact AWS for billing questions and service limit increases.
+
+With Basic Support, you have access to a limited selection of AWS Trusted Advisor checks. Additionally, you can use the AWS Personal Health Dashboard, a tool that provides alerts and remediation guidance when AWS is experiencing events that may affect you. 
+
+### Developer, Business, Enterprise On-Ramp, and Enterprise Support
+
+The Developer, Business, Enterprise On-Ramp, and Enterprise Support plans include all the benefits of Basic Support, in addition to the ability to open an unrestricted number of technical support cases. These Support plans have pay-by-the-month pricing and require no long-term contracts.
+
+
+**Developer**
+Customers in the Developer Support plan have access to features such as:
+
+- Best practice guidance
+- Client-side diagnostic tools
+- Building-block architecture support, which consists of guidance for how to use AWS offerings, features, and services together
+
+**Business support**
+Customers with a Business Support plan have access to additional features, including: 
+
+- Use-case guidance to identify AWS offerings, features, and services that can best support your specific needs
+- **All AWS Trusted Advisor** checks
+- Limited support for third-party software, such as common operating systems and application stack components
+
+**Enterprise On-Ramp support**
+Empezó a ofrecerse en Noviembre de 2021, contiene todas las características del Basic, Developer, Business y otras más:
+
+- A pool of Technical Account Managers to provide proactive guidance and coordinate access to programs and AWS experts
+- A Cost Optimization workshop (one per year)
+- A Concierge support team for billing and account assistance
+- Tools to monitor costs and performance through Trusted Advisor and Health API/Dashboard
+
+Enterprise On-Ramp Support plan also provides access to a specific set of proactive support services, which are provided by a pool of Technical Account Managers.
+
+- Consultative review and architecture guidance (one per year)
+- Infrastructure Event Management support (one per year)
+- Support automation workflows
+- 30 minutes or less response time for business-critical issues
+
+**Enterprise support**
+En adición a todos los anteriores este ofrece:
+
+- A designated Technical Account Manager to provide proactive guidance and coordinate access to programs and AWS experts
+- A Concierge support team for billing and account assistance
+- Operations Reviews and tools to monitor health
+- Training and Game Days to drive innovation
+- Tools to monitor costs and performance through Trusted Advisor and Health API/Dashboard
+
+The Enterprise plan also provides full access to proactive services, which are provided by a designated Technical Account Manager:
+
+- Consultative review and architecture guidance
+- Infrastructure Event Management support
+- Cost Optimization Workshop and tools
+- Support automation workflows
+- 15 minutes or less response time for business-critical issues
+
+
+### Technical Account Manager (TAM)
+
+Es tu principal punto de contacto con AWS, se incluye en los planes Enterprise y Enterprise On-Ramp.
+Su objetivo es educar, emporder y evolucionar tu trayecto a traves de la nube tomando el total rango de los servicios de AWS. Te provee de guía experta en ingeniería, te ayuda a diseñar soluciones para integrar AWS y te ayuda a crear arquitecturas resilentes y costo-eficientes.
+
+---
+
+## AWS Marketplace
+
+Es un catálogo digital en el que proveedores Third Party ofrecen distintos sofware dentro del mismo AWS para hacer implementaciones en AWS mucho más rápidas solo con unos cuantos clicks. Ofrecen opciones de pay-as-you-go y demás opciones de pago y prueba.
+
+Algunas características enfocadas a empresas:
+
+- Términos y precios personalizados
+- Marketplace privado
+- Integración en tus sistemas
+- Herramientas de manejo de costes
+
+Categorías:
+
+- Infrastructure Software
+- DevOps
+- Data Products
+- Professional Services
+- Business Applications
+- Machine Learning
+- Industries
+- Internet of Things (IoT)
+
+
+---
+
+
+# Migration and Innovation
+

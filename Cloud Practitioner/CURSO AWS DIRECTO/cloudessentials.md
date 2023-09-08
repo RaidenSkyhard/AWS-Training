@@ -1087,3 +1087,113 @@ Categorías:
 
 # Migration and Innovation
 
+In this module, you will learn how to:
+
+- Understand migration and innovation in the AWS Cloud.
+- Summarize the AWS Cloud Adoption Framework (AWS CAF). 
+- Summarize the six key factors of a cloud migration strategy.
+- Describe the benefits of AWS data migration solutions, such as AWS Snowcone, AWS Snowball, and AWS Snowmobile.
+- Summarize the broad scope of innovative solutions that AWS offers.
+
+---
+
+## AWS Cloud Adoption Framework (CAF)
+
+Es un marco de trabajo (lineamientos, recomendaciones y buenas prácticas) que existe para guiarte en la transición de On-Premises a la nube, porque al final del día, esto no es un proceso mágico.
+
+### Six Core Perspectives of the CAF
+
+**Business capabilities focus**:
+- Business: Use the Business Perspective to create a strong business case for cloud adoption and prioritize cloud adoption initiatives. Ensure that your business strategies and goals align with your IT strategies and goals. **Business and finance managers / budget owners / strategy stakeholders**.
+- People: Use the People Perspective to evaluate organizational structures and roles, new skill and process requirements, and identify gaps. This helps prioritize training, staffing, and organizational changes. **HR / Staffing / People managers**,
+- Governance: Use the Governance Perspective to understand how to update the staff skills and processes necessary to ensure business governance in the cloud. Manage and measure cloud investments to evaluate business outcomes. **Chief Information Officer / Program managers / Enterprise architects / Business analysts / Portfolio managers**.
+
+
+**Technical capabilities focus**:
+- Platform: Use a variety of architectural models to understand and communicate the structure of IT systems and their relationships. Describe the architecture of the target state environment in detail. **Chief Technology Officer / IT Managers / Solutions architects**.
+- Security: Ensures that the organization meets security objectives for visibility, auditability, control, and agility.  Use the AWS CAF to structure the selection and implementation of security controls that meet the organization’s needs. **Chief Information Security Officer / IT security managers and analysts**.
+- Operations: Enable, run, use, operate, and recover IT workloads to the level agreed upon with your business stakeholders. Define how day-to-day, quarter-to-quarter, and year-to-year business is conducted. Align with and support the operations of the business. The AWS CAF helps these stakeholders define current operating procedures and identify the process changes and training needed to implement successful cloud adoption. **IT operations and support managers**.
+
+---
+
+## Migration Strategies
+
+### Estrategia de las 6 R's
+
+#### Rehosting
+Also known as “lift-and-shift” involves moving applications without changes. 
+In the scenario of a large legacy migration, in which the company is looking to implement its migration and scale quickly to meet a business case, the majority of applications are rehosted.
+Se mueven de locación todos los recursos de la empresa, esto suele ser muy simple.
+
+#### Replatforming
+Also known as “lift, tinker, and shift,” involves making a few cloud optimizations to realize a tangible benefit. Optimization is achieved without changing the core architecture of the application.
+**Ejemplo**: mover tus DB del servidor On-Premise a RDS y un posible upgrade a Aurora.
+
+#### Refactoring/Re-architecting
+Involves reimagining how an application is architected and developed by using cloud-native features. Refactoring is driven by a strong business need to add features, scale, or performance that would otherwise be difficult to achieve in the application’s existing environment.
+SE TIENE QUE HACER NUEVO CÓDIGO.
+
+#### Repurchasing
+Involves moving from a traditional license to a software-as-a-service model. **Ejemplo**: cambiar de un CRM como HubSpot a SalesForce.
+
+#### Retaining
+Consists of keeping applications that are critical for the business in the source environment. This might include applications that require major refactoring before they can be migrated, or, work that can be postponed until a later time.
+Mantener programas viejos que NECESITA la empresa y son difíciles o requieren mayor planeación para migrarse a la nube.
+
+#### Retiring
+Process of removing applications that are no longer needed.
+
+
+---
+
+## AWS Snow Family
+
+### AWS SnowCone
+Almacena hasta 14 TB de datos, tiene 2 CPUs y 4 GB de RAM. Está chikito. Se empaca y se manda con Amazon.
+
+### AWS Snowball Edge
+Viene en dos presentaciones.
+- Storage Optimized: optimizados para transferencias de datos largas con buen poder de cómputo. Almacena 80 TB de HDD de capacidad para block volumes y tiene compatibilidad con almacenamiento de objetos de S3. Cuenta con 1 TB de SATA SSD para block volumes. 40 vCPUs y 80 GiB de RAM para soportar una instance de EC2 tipo sbe1 (equivalente a C5) 
+- Compute Optimized: optimizado para casos dependientes de poder de cómputo como Machine Learning, análisis de videos, analíticas y computing stacks locales. 80TB de HDD compatibles con block volumes de EBS y 28 TB de NVME SSD para lo mismo. 104 vCPUs, 416GiB de RAM y trae una Nvidia Tesla V100 como optional. Corre EC2 sbe-c y sbe-g instances equivalentes a C5, M5a, G3 y P3.
+
+### AWS Snowmobile
+Almacena 100 PB (100,000 TB). Un container de 45 ft montado en un trailer.
+
+---
+
+## Innovation with AWS
+
+Con AWS tienes varias opciones para innovar con las últimas tecnologías siempre y cuando articules las siguientes condiciones:
+
+- El estado actual
+- El estado deseado
+- Los problemas que quieres resolver
+
+Hay algunas formas de innovar mediante las siguientes tres categorías:
+
+**Serverless applications**
+Una serverless application se requiere a una aplicación que no requiere de proveer mantener o administrar servidores, no tienes que preocuparte por nada de eso, todo lo hace el CSP.
+**AWS Lambda** es un ejemplo de una serverless, en el que únicamente te preocupas de hacer correr tu código.
+
+**Machine Learning**
+La ML tradicional es compleja, cara, consume tiempo y es muy propensa a errores. AWS ofrece **SageMaker** como un modo de procesar y empoderar tu creación, entrenamiento y deploy de modelos de ML rápidamente.
+
+**Artificial Inteligence**
+
+AWS ofrece varios servicios empoderados con AI, algunos ejemplos notables son:
+- Tener recomendaciones mientras escribes código para identificar problemas de seguridad con **Amazon CodeWhisperer**.
+- Convertir voz a texto como **Amazon Transcribe**.
+- Encontrar patrones de texto con **Amazon Comprehend**.
+- Identificar potenciales actividades fraudulentas online con **Amazon Fraud Detector**.
+- Crear bots de voz y texto con **Amazon Lex**.
+
+
+---
+
+
+# The Cloud Journey
+
+In this module, you will learn how to:
+
+- Summarize the six pillars of the Well-Architected Framework.  
+- Explain the six benefits of cloud computing.

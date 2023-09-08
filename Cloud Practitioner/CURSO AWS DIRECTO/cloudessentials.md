@@ -1,16 +1,18 @@
 # AWS Cloud Practitioner Essentials Introduction
 
 - EC2 Works for Server side
-> EC2 is Elastic Cloud Compute, an AWS Service
+  
+  > EC2 is Elastic Cloud Compute, an AWS Service
 
 Pay-as-you-go / Pay-for-use: paying just for the resources that you gonna use
 
 Cloud computing: The on-demand delivery of IT Resources over the internet with a pay-as-you-go pricing.
+
 > El objetivo de los cloud services es ofrecer toda la infraestructura de IT para que tú únicamente centres tu negocio en los contenidos que se hacen dentro de esa infraestructura pagando únicamente por los recursos que utilizas en el momento exacto en que los utilizas.
 
 —
-# Compute in the cloud
 
+# Compute in the cloud
 
 ## Introduction to Amazon EC2
 
@@ -22,6 +24,7 @@ EC2 are virtual servers managed by Amazon, you can enter your request of the num
 Las instancias son seguras, ya que no se enteran entre ellas que existen, incluso si comparten recursos.
 
 EC2 proporciona gran flexibilidad y control, también en la configuración de tus instancias.
+
 - Puedes escoger el OS (Windows y Linux), que software quieres corriendo (programas de la empresa, web apps, databases, software de terceros, etc).
 - Tienes completo control de qué corre en tu instance de EC2.
 
@@ -43,7 +46,6 @@ EC2 proporciona gran flexibilidad y control, también en la configuración de tu
 - You pay only for the compute time you use when an instance is running, not when it is stopped or terminated.
 - You can save costs by paying only for server capacity that you need or want.
 
-
 ### Cómo funciona EC2
 
 - **Launch**: Lanzas una instancia, escogiendo una plantilla con configuraciones predenterminadas con componentes básicos, como el OS, las aplicaciones que va a llevar instaladas, el tipo de uso que se le va a usar, etc. También puedes escoger el *instance type* que hace referencia a la configuración de hardware que va a llevar el instance de EC2. Y también se puede especificar la configuración de seguridad y el tráfico de red que fluye en dicha instancia.
@@ -63,7 +65,6 @@ Las distintas familias de instances son:
 1. Balanced resources
 2. Diverse workloads (web servers or code repositories)
 3. Small and medium databases
-
 - Compute optimized
 1. Compute intensive tasks (Gaming servers, High performance computing or scientific modeling)
 2. Ideal for compute bound applications that benefit from high performance processors.
@@ -74,19 +75,16 @@ Las distintas familias de instances son:
 7. Scientific modeling
 8. Dedicated gaming servers and ad server engines
 9. Machine learning inference and other compute intensive applications.
-
 - Memory optimized
 1. Memory intensive tasks
 2. Databases
 3. Carga de trabajo que implique mucho uso de memoria ram
-
 - Accelerated computing
 1. Floating point number calculations
 2. Graphics processing
 3. Data pattern matching
 4. Utilize hardware accelerators
 5. Streaming de videojuegos y películas
-
 - Storage optimized
 1. High performance for locally storaged data
 2. Read and write secuential data
@@ -95,7 +93,6 @@ Las distintas familias de instances son:
 5. High-frecuencly Online Transaction Processing (OLTP) systems
 6. **IOPS**: término para input/output operations per second, métrica que mide el rendimiento de un dispositivo de almacenamiento.
 
-
 —
 
 ### Amazon EC2 Pricing
@@ -103,18 +100,17 @@ Las distintas familias de instances son:
 Para EC2 hay dos principales modos de cobro y presupuesto para EC2:
 
 1. On-Demand: solo pagas por la duración del uso de tu instancia, por hora o segundo y variando del OS que usas. No necesitas hablar con Amazon para comenzar a usarlo. Puedes usarlo como una vara con la que medir tus costes.
-    * Ideales para uso corto, carga de trabajo irregular y que no se puede interrumpir,
-    * No te cobran por adelantado ni te piden un contrato mínimo.
-    * Estas instancias corren continuamente hasta que las detengas y solo pagas por el tiempo que la utilizaste.
-    * ==ES COMO IR AL CIBER==
+   * Ideales para uso corto, carga de trabajo irregular y que no se puede interrumpir,
+   * No te cobran por adelantado ni te piden un contrato mínimo.
+   * Estas instancias corren continuamente hasta que las detengas y solo pagas por el tiempo que la utilizaste.
+   * ==ES COMO IR AL CIBER==
 2. Savings plan: ofrece un precio todavía más bajo que el On-Demand pero limitado a solo un determinado uso, se mide en dólares/hora. Este tipo de presupuesto te puede ahorrar más del 70% del dinero estimado a gastar en AWS. Se paga en contratos de 1 a 3 años.
 3. Reserved instances: específica para cargas de trabajo estables (steady-state workloads) o para aquellas con un uso predecible. Te puede ofrecer un descuento de hasta 75% comparado al on-demand. Se paga en contratos de 1 a 3 años con 3 opciones de pago:
-    - All upfront: pagas todo de una en cuanto contratas.
-    - Partial upfront: pagas una fracción al contratar.
-    - No upfront: no pagas nada al contratar.
+   - All upfront: pagas todo de una en cuanto contratas.
+   - Partial upfront: pagas una fracción al contratar.
+   - No upfront: no pagas nada al contratar.
 4. Spot instances: te permite solicitar poder de cómputo adicional de tu instancia de EC2, por hasta un 90% menos de precio que el On-Demand. El problema es que Amazon te puede decir "ya vete del ciber" cuando se le dé la gana y te va a avisar 2 minutos antes que dejes la compu y guardes lo que estás haciendo para continuar después. Esta es buena opción para cargas de trabajo que puedan ser interrumpidas.
 5. Dedicated host: un server físico dedicado solo para tu uso de EC2. Son para usos muy muy específicos y nadie más que tú va a utilizar los recursos de ese server/host.
-
 
 —
 
@@ -144,7 +140,6 @@ El mínimo son las instancias que van a iniciar nadamás encender el auto scalin
 El desired van a correr en cuanto se superen las capacidades del minimo.
 Y maximo solo durante picos de demanda.
 
-
 ## Directing Traffic with Elastic Load Balancing
 
 Volvemos al ejemplo de la cafetería, supongamos que la gente está pendeja y todos se van a ser atendidos con el mismo cajero, dejando a los demás sin hacer nada. El problema es resuelto poniendo a alguien en la entrada a que cuente cuántas personas está atendiendo cada cajero para que los reparta de modo que sea eficiente.
@@ -161,7 +156,7 @@ Funciona como un "puente" entre el frontend y el backend, en el que manda de for
 
 —
 
-##  Messaging and Queuing
+## Messaging and Queuing
 
 Ejemplo de la cafetería: la cajera toma la orden, la anota en papel y se la pasa al wey que prepara el café, este proceso se repite en cada petición del cliente.
 Para evitar una situación en la que no se puedan entregar las órdenes, se crea un buffer, de modo que siempre se puedan recibir órdenes nuevas y el wey que prepara el café tenga tiempo de ver qué tiene pendiente.
@@ -169,13 +164,11 @@ Para evitar una situación en la que no se puedan entregar las órdenes, se crea
 
 - **Tightly coupled architecture**: Cuando no se tiene un buffer, puede causar fallas para todo el sistema.
 - **Loosely coupled architecture**: Si un componente falla, no compromete al resto del sistema, Las fallas se quedan aisladas.
-![c68e37308201383d1fef60aa75981276.png](c68e37308201383d1fef60aa75981276.png)
-
+  ![c68e37308201383d1fef60aa75981276.png](c68e37308201383d1fef60aa75981276.png)
 
 **En el Tightly no existe el message queue y se pierden todos los requests ya que no se almacenaron en un buffer**
 
 El servicio de AWS que sirve para esto es Amazon Simple Queue Service (Amazon SQS) y Amazon Simple Notification Service (Amazon SNS)
-
 
 —
 
@@ -189,10 +182,7 @@ In this approach to application architecture, if a single component fails, other
 
 ![b9beff8fa561624b0654afe20ab17d9a.png](b9beff8fa561624b0654afe20ab17d9a.png)
 
-
-
 > To help maintain application availability when a single component fails, you can design your application through a **microservices** approach.
-
 
 **Microservicios**: In a microservices approach, application components are loosely coupled. In this case, if a single component fails, the other components continue to work because they are communicating with each other. The loose coupling prevents the entire application from failing. 
 
@@ -241,8 +231,6 @@ También puede notificar al usuario del estatus de sus mensajes,
 
 **AWS Lambda**: Tú subes tu código, configuras el trigger y esta corre en cuanto se activa el trigger. Lambda se encarga por sí solo de instalar las dependencias y de escalarse si es necesario. Solamente pagas cuando tu código corre, todo bajo cero administración.
 
-
-
 **Containers**: provide you with a standard way to package your application's code and dependencies into a single object. You can also use containers for processes and workflows in which there are essential requirements for security, reliability, and scalability.
 
 **AWS Elastic Container Service(ECS)**: is a highly scalable, high-performance container management system that enables you to run and scale containerized applications on AWS. 
@@ -251,17 +239,12 @@ Amazon ECS supports Docker containers.
 **AWS Elastic Kubernetes Service (EKS)**: is a fully managed service that you can use to run Kubernetes on AWS. 
 Kubernetes is open-source software that enables you to deploy and manage containerized applications at scale. A large community of volunteers maintains Kubernetes, and AWS actively works together with the Kubernetes community. As new features and functionalities release for Kubernetes applications, you can easily apply these updates to your applications managed by Amazon EKS.
 
-
-
 **AWS Fargate**: is a serverless compute engine for containers. It works with both Amazon ECS and Amazon EKS. 
 When using AWS Fargate, you do not need to provision or manage servers. AWS Fargate manages your server infrastructure for you. You can focus more on innovating and developing your applications, and you pay only for the resources that are required to run your containers.
 
-
 —
 
-
 # Global Infrastructure and Reliability
-
 
 ## Introduction
 
@@ -271,7 +254,6 @@ Aquí vamos a aprender:
 - Describir los conceptos básicos de Availability Zones
 - Describir los beneficios de Amazon CloudFront y ubicaciones de bordes (edge locations)
 - Comparar los distintos métodos de proveer los servicios de AWS
-
 
 Para entender el concepto de disponibilidad supongamos que por alguna razón, los clientes no pueden ir a la cafetería que antes mencionamos, sin embargo, la cafetería es parte de una franquicia, de modo que si no pueden ir a una de ellas, van a otra que si esté disponible.
 
@@ -318,12 +300,10 @@ Si tu organización tiene clientes en todo el mundo y no es posible que la regio
 
 An **edge location** is a site that Amazon CloudFront uses to store cached copies of your content closer to your customers for faster delivery.
 
-
 * **Content Delivery Network (CDN)**: Se les conoce como Amazon Cloudfront
 * **Amazon Cloudfront**: usa Edge Locations, separados de las regiones específicamente solo para entregar contenidos con gran velocidad.
 * **Amazon Route 53**: Contiene DNS para redirigir a los clientes y obtener latencia baja.
 * **AWS Outposts**: Si un cliente quiere que AWS corra en sus propias instalaciones físicas, se utiliza este servicio en el que AWS va a instalar una mini región aislada a tu edificio.
-
 
 —
 
@@ -333,6 +313,7 @@ La forma de comunicarse con AWS y sus recursos siempre va a ser mediante APIs
 
 **API**: Application programming interface, una forma predeterminada de interactuar con tus recursos de AWS (crear, borrar, iniciar mover, etc).
 Hay varias formas de interactuar mediante el uso de la API como:
+
 - AWS Management Console: basada en el navegador, de forma visual y fácil de digerir. Recomendada para principiantes. Se recomienda usarla para: Test environments, ver las facturas y cobros, monitorear y trabajar con recursos no técnicos. Deja de ser óptima cuando te mueves a un ambiente de producción en la que el point and click no sea eficiente.
 - AWS Command Line Interface (CLI): hace llamadas a la API desde la consola de tu computadora. Puedes scriptear para hacer procesos automáticamente y reduciendo el margen de error muy considerablemente.
 - AWS Software Development Kits (SDKs): Interactuar con AWS mediante algún lenguaje de programación, ideal para programadores. To help you get started with using SDKs, AWS provides documentation and sample code for each supported programming language. Supported programming languages include C++, Java, .NET, and more.
@@ -350,6 +331,7 @@ With **AWS Elastic Beanstalk**, you provide code and configuration settings, and
 * 
 
 **AWS CloudFormation**: Infrastructure as code tool used to define a wide variety of AWS resources. Se ocupa de los comandos por sí sola y maneja:
+
 - Storage
 - Databases
 - Analytics
@@ -360,7 +342,6 @@ Puedes tomar un template para que por sí sola haga las calls a la API e incluso
 With **AWS CloudFormation**, you can treat your infrastructure as code. This means that you can build an environment by writing lines of code instead of using the AWS Management Console to individually provision resources.
 
 AWS CloudFormation provisions your resources in a safe, repeatable manner, enabling you to frequently build your infrastructure and applications without having to perform manual actions. It determines the right operations to perform when managing your stack and rolls back changes automatically if it detects errors.
-
 
 — 
 
@@ -384,7 +365,6 @@ Volviendo al ejemplo de cafetería, imaginemos que hay gente que quiere pedirle 
 —
 
 ## Connectivity to AWS
-
 
 **Virtual Private Cloud (VPC)**: es en esencia nuestra red privada, permite definir el rango de IPs privadas.
 
@@ -465,7 +445,6 @@ Significa que **puedes comprar y manejar tu dominio desde AWS**.
 
 Suppose that AnyCompany’s application is running on several Amazon EC2 instances. These instances are in an Auto Scaling group that attaches to an Application Load Balancer. 
 
-
 A customer requests data from the application by going to AnyCompany’s website. 
 
 Amazon Route 53 uses DNS resolution to identify AnyCompany.com’s corresponding IP address, 192.0.2.0. This information is sent back to the customer. 
@@ -473,7 +452,6 @@ Amazon Route 53 uses DNS resolution to identify AnyCompany.com’s corresponding
 The customer’s request is sent to the nearest edge location through Amazon CloudFront. 
 
 Amazon CloudFront connects to the Application Load Balancer, which sends the incoming packet to an Amazon EC2 instance.
-
 
 ---
 
@@ -490,7 +468,6 @@ In this module, you will learn how to:
     Describe the benefits of Amazon DynamoDB.
     Summarize various database services.
 
-
 ---
 
 ## Instance Stores and Amazon Elastic Block Store (Amazon EBS)
@@ -500,7 +477,6 @@ Las instancias de EC2 proveen de todos los recursos básicos de una computadora,
 **Block Level Storage**: imaginemoslo como un mueble donde organizar archivos, de modo que este almacenamiento lo que hace es que solo se actualiza o mueve los componentes que son necesarios mover, haciéndolo de forma más eficiente.
 
 La naturaleza **temporal** de las instancias de EC2 (**Instance Stores**)impide que se utilicen para almacenar archivos debido a que cuando se enciendan y apaguen, van a iniciar en otro host.
-
 
 ### Amazon Elastic Block Store (EBS)
 
@@ -522,13 +498,16 @@ Incremental backups are different from full backups, in which all the data in a 
 Permite almacenar y solicitar una cantidad ilimitada de datos.
 
 - Los datos/archivos se almacenan como "objetos"
-![e46743a785d98d27d9db90cf91d8cb97.png](e46743a785d98d27d9db90cf91d8cb97.png)
-In **object storage**, each object consists of data, metadata, and a key.
-The data might be an image, video, text document, or any other type of file. Metadata contains information about what the data is, how it is used, the object size, and so on. An object’s key is its unique identifier.
+  ![e46743a785d98d27d9db90cf91d8cb97.png](e46743a785d98d27d9db90cf91d8cb97.png)
+  In **object storage**, each object consists of data, metadata, and a key.
+  The data might be an image, video, text document, or any other type of file. Metadata contains information about what the data is, how it is used, the object size, and so on. An object’s key is its unique identifier.
 
 - Los objetos se almacenan en buckets ("directorios")
+
 - El tamaño máximo que puede tener un objeto es de 5TB
+
 - Tienes versiones del objeto para poder volverlo a una versión anterior en caso de cualquier error
+
 - Puedes tener varios buckets en donde puedes limitar qué usuarios tienen acceso a esos datos
 
 Puedes darle a la data diferentes "tiers" de acuerdo a su caso de uso, no es lo mismo una data que se modifica a diario y requiere constante acceso, a una data que requiere mantenerse igual durante años.
@@ -543,7 +522,6 @@ Puedes darle a la data diferentes "tiers" de acuerdo a su caso de uso, no es lo 
 * **Amazon S3 Glacier Deep Archive**: S3 Deep Archive supports long-term retention and digital preservation for data that might be accessed once or twice in a year. This storage class is the lowest-cost storage in the AWS Cloud, with data retrieval from 12 to 48 hours. All objects from this storage class are replicated and stored across at least three geographically dispersed Availability Zones.
 * **Amazon S3 Outposts**: Amazon S3 Outposts delivers object storage to your on-premises AWS Outposts environment. Amazon S3 Outposts is designed to store data durably and redundantly across multiple devices and servers on your Outposts. It works well for workloads with local data residency requirements that must satisfy demanding performance needs by keeping data close to on-premises applications.
 
-
 ### Amazon EBS vs S3
 
 **EBS**
@@ -552,7 +530,6 @@ Puedes darle a la data diferentes "tiers" de acuerdo a su caso de uso, no es lo 
 - Data de la instancia de EC2 persiste
 - SSD por default
 - Opciones de uso de HDD
-
 
 **S3**
 
@@ -590,13 +567,11 @@ Amazon RDS is a managed service that automates tasks such as hardware provisioni
 
 Amazon RDS provides a number of different security options. Many Amazon RDS database engines offer encryption at rest (protecting data while it is stored) and encryption in transit (protecting data while it is being sent and received).
 
-
 **Relational databases**
 
 In a relational database, data is stored in a way that relates it to other pieces of data. 
 
 Relational databases use structured query language (SQL) to store and query data. This approach allows data to be stored in an easily understandable, consistent, and scalable way. For example, the coffee shop owners can write a SQL query to identify all the customers whose most frequently purchased drink is a medium latte.
-
 
 Databases que soporta AWS:
 
@@ -607,7 +582,6 @@ Databases que soporta AWS:
 - MariaDB
 - Amazon Aurora
 
-
 Lift-and-shift migration
 
 RDS permite:
@@ -617,7 +591,6 @@ RDS permite:
 - Redundancy
 - Failover
 - Disaster recovery
-
 
 ### Amazon Aurora
 
@@ -644,7 +617,6 @@ Is a key-value database service. It delivers single-digit millisecond performanc
 Is serverless, lo que significa que tú no debes preocuparte por proveer o manejar el server, solamente preocúpate por la data de tu DB.
 Tiene automatic scalling, se ajusta automáticamente al rendimiento que requiera tu sitio.
 
-
 **Nonrelational databases**
 
 In a nonrelational database, you create tables. A table is a place where you can store and query data.
@@ -656,7 +628,6 @@ In a key-value database, you can add or remove attributes from items in the tabl
 *Ejemplo de una DB no relacional*:
 ![non relational db](image-3.png)
 
-
 ---
 
 ## Amazon Redshift
@@ -664,7 +635,6 @@ In a key-value database, you can add or remove attributes from items in the tabl
 Is a data warehousing service that you can use for big data analytics. It offers the ability to collect data from many sources and helps you to understand relationships and trends across your data.
 
 El problema con utilizar las DB tradicionales para un análisis de uso de las DB, es que la variedad de datos y la característica de que se usan todo el tiempo (históricos) puede hacer muy complicada su consulta.
-
 
 ---
 
@@ -674,41 +644,41 @@ Enables you to migrate relational databases, nonrelational databases, and other 
 
 With AWS DMS, you move data between a source database and a target database. The source and target databases(opens in a new tab) can be of the same type or different types. During the migration, your source database remains operational, reducing downtime for any applications that rely on the database.
 
-
 Casos de uso para AWS DMS:
 
 - Development and test database migrations: permite que los devs prueben aplicaciones con datos diferentes a los de production sin romper nada.
 - Database consolidation: combinar varias DB en una.
 - Continuos replication: que se manden varias copias de la DB a otros lugares en lugar de solo hacer una migración solita.
 
-
 ---
 
 ## Additional Database Services
 
 ### Amazon DocumentDB (with MongoDB compatibility)
+
 Es chido para manejo de contenido como catálogos de servicios o productos
 
 ### Amazon Neptune
+
 Database gráfica, muy útil para redes sociales, detección de fraudes, gráficas de knowledge y motores de recomendaciones
 
 ### Amazon Quantum Ledger Database (Amazon QLDB)
+
 Cadenas de inventario o bancos que requieren un 100% de inmutabilidad y total confianza en los datos. Sistema inmutable.
 You can use Amazon QLDB to review a complete history of all the changes that have been made to your application data.
 
 ### Amazon Managed Blockchain
-Pa la blockchain
 
+Pa la blockchain
 
 ### Database accelerators
 
 **Elastic cache**: para ver la data más utilizada sin estarla consultando a cada rato, si no tomarla de la caché.
 **DynamoDB Accelerator (DAX)**: acelera las DB de DynamoDB con cache.
 
-
 ---
 
-# Security 
+# Security
 
 In this module, you will learn how to:
 
@@ -750,24 +720,28 @@ IAM gives you the flexibility to configure access based on your company’s spec
 **MEJORES PRÁCTICAS PARA CARACTERÍSTICAS DE AWS IAM**
 
 Cuenta Root
+
 - Es la cuenta que se crea en base al correo y contraseña de la cuenta de AWS. Cuenta con el mayor nivel de acceso a todo en AWS.
 - Crear un usuario IAM con permisos para crear otros usuarios. Loggearse con el nuevo usuario IAM y limitar el uso de la root account solo para tareas muy muy específicas.
 
 IAM user
+
 - Identity that you create in AWS. It represents the person or application that interacts with AWS services and resources. It consists of a name and credentials. Por default no tiene ningún permiso, ni siquiera para loggearse, tú debes de darle permisos antes de siquiera acceder.
 - Se recomienda crear usuarios de IAM para cada persona que necesite acceso a los recursos.
 
 IAM policies
+
 - Documento en JSON que da acceso o lo deniega a ciertos recursos y servicios de AWS. Estos permiten delimitar el nivel de acceso de cada usuario.
 - Se recomienda dar permisos del menor al mayor, de modo que los usuarios no tengan acceso a todos los recursos sin autorización previa.
 
 IAM groups
+
 - Es un conjunto de usuarios de IAM con ciertos permisos con el objetivo de que las policies de IAM se hagan más fáciles de aplicar a múltiples usuarios.
 
 IAM roles
+
 - Son "perfiles" con determinados permisos dentro de un perfil de IAM, estos perfiles se asumen de manera temporal para llevar a cabo distintas tareas. Solo se puede tener UN ROL activo a la vez.
 - Son ideales para tareas que se hagan de manera temporal en lugar de las que se llevan a cabo de forma temporal.
-
 
 ---
 
@@ -788,7 +762,6 @@ In AWS Organizations, you can group accounts into organizational units (OUs) to 
 
 By organizing separate accounts into OUs, you can more easily isolate workloads or applications that have specific security requirements. For instance, if your company has accounts that can access only the AWS services that meet certain regulatory requirements, you can put these accounts into one OU. Then, you can attach a policy to the OU that blocks access to all other AWS services that do not meet the regulatory requirements.
 
-
 ---
 
 ## Compliance
@@ -802,7 +775,6 @@ Servicio que provee acceso a los reportes de seguridad y cumplimiento de acuerdo
 **AWS Artifact Agreements** (acuerdos): Aquí puedes revisar, aceptar y manejar los acuerdos para cada cuenta individual y para todas tus cuentas en AWS Organizations. Se ofrecen distintos tipos de acuerdos dependiendo de la regulación que necesiten en específico.
 
 **AWS Artifact Reports**: Es para darle reportes de cumplimiento a auditores third party en caso de que necesiten información específica de las regulatorias que deben cumplir.
-
 
 ### Customer Compliance Center
 
@@ -819,6 +791,7 @@ DDoS: Distributed denial of service
 Cuando un wey con una botnet manda chingos de request a tu webpage de modo que se sature el server y no tengas los recursos para proveerle servicios a tus clientes.
 
 ### AWS WAF
+
 Web Application Firewall
 Es un Firewall con IA y ML diseñado para websites que sirve para reconocer patrones de ataque DDoS.
 Permite monitorear las network request que llegan a tus web apps.
@@ -850,14 +823,14 @@ Corre pruebas de seguridad automatizadas en tu infraestructura y te da consejos 
 Enlista todos los findings referentes a seguridad y los ordena de acuerdo al nivel de severidad incluyendo la descripción y las recomendaciones.
 
 ### Amazon GuardDuty
+
 Is a service that provides intelligent threat detection for your AWS infrastructure and resources. It identifies threats by continuously monitoring the network activity and account behavior within your AWS environment.
 
 GuardDuty analiza constantemente todo el tráfico de red para detectar amenazas y proveer pasos para remediarlo.
 
-
 ---
 
-## Monitoring and analytics
+# Monitoring and analytics
 
 In this module, you will learn how to:
 
@@ -909,7 +882,6 @@ Por ejemplo:
 
 ![cloudtrail ejemplo](hoK85sdXpmZtnH9K_LpdzY_ElDiXoJpKQ.png)
 
-
 ### Cloudtrail Insights
 
 Es una característica adicional de CloudTrail que se pone a chambear cuando detecta actividad inusual de la API en una cuenta de AWS. Por ejemplo, puede detectar si tu cuenta de la nada se puso a lanzar instancias de EC2.
@@ -936,4 +908,79 @@ Es un servicio que constantemente va a estar checando tu infraestructura y te da
 ---
 
 # Pricing and support
+
+In this module, you will learn how to:
+
+- Describe AWS pricing and support models.
+- Describe the AWS Free Tier.
+- Describe key benefits of AWS Organizations and consolidated billing.
+- Explain the benefits of AWS Budgets.
+- Explain the benefits of AWS Cost Explorer.
+- Explain the primary benefits of the AWS Pricing Calculator.
+- Distinguish between the various AWS Support Plans.
+- Describe the benefits of AWS Marketplace.
+
+---
+
+## AWS Free Tier
+
+Es el modo en que puedes iniciar a usar los servicios de AWS sin preocuparte por el costo. Hay 3 tipos de ofertas:
+
+- Always free: que SIEMPRE van a estar gratis siempre y cuando no te pases del límite marcado para que esto sea gratis.
+
+- 12 Months free: similar al caso pasado añadiéndole la condición de que en el momento en que creas tu cuenta de AWS console empiezan a contar los meses, pasado ese periodo de 12 meses tienes que empezar a pagar por el uso de los servicios incluidos en este apartado.
+
+- Trials: similar al caso anterior solo que con un periodo de prueba mucho más corto o más limitado.
+
+---
+
+## AWS Pricing Concepts
+
+### How AWS Pricing works
+
+Hay distintos métodos de cobro y pago para AWS que se ajustan a las necesidades del usuario.
+
+- **Pay for what you use***: solamente pagas por los recursos que usas sin comprometer ningún contrato u otro tipo de licencias. Es como ir a un ciber café.
+
+- **Pay less when you reserve**: puedes reservar por adelantado un servicio que sabes que vas a usar de modo que ahorras bastante dinero al hacerlo, por ejemplo, las EC2 instances.
+
+- **Pay less with volume-based discounts when you use more**: algunos servicios ofrecen costos extremadamente bajos conforme los vas usando más. Por ejemplo, en S3 pagas menos conforme más GB consumes.
+
+### AWS Pricing Calculator
+
+Es una [calculadora web](calculator.aws) que permite crear y calcular costos de los servicios que vas a utilizar en AWS, es útil para hacer presupuestos y compartirlos mediante links.
+
+Como ejemplo, puedes jugar con la calculadora para ver cuánto te costaría usar determinados tipos de instancias de EC2 dependiendo de su función y tu uso.
+
+---
+
+## Billing Dashboard
+
+Es un apartado de tu cuenta en el que puedes ver un resumen de tus costos y cuánto representa cada uno en los costes finales de operación.
+
+También tienes una lista detallada para saber cuánto costó cada servicio y por qué.
+
+---
+
+## Consolidated billing
+
+AWS permite juntar los pagos de todos los usuarios y cuentas de una organización, haciéndolo más fácil de organizar y ver para las empresas, además de más barato en ciertas ocasiones. Por último, es una característica completamente gratuita.
+
+Por ejemplo, supongamos que tienes 3 cuentas de AWS que usan el servicio de S3 con distinta demanda.
+
+![consolidated billing](image-6.png)
+
+De modo que la organización puede juntar a las 3 cuentas para obtener un descuento en la factura de S3 por haber sobrepasado el uso de 10 TB.
+
+---
+
+## AWS Budgets
+
+Es un servicio de AWS en el que puedes planear tu uso de servicio, costos de servicio y reservación de instancias. La información de AWS Budgets se actualiza 3 veces al día, de modo que nos permite determinar que tan cerca estamos de pasarnos del presupuesto o del free tier. Puedes hacer alertas para que tus costos no se sobrepasen.
+
+---
+
+## AWS Cost Explorer
+
+sdsds
 

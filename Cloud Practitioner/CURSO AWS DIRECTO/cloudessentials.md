@@ -1229,3 +1229,16 @@ Herramienta dentro de la consola de AWS con recomendaciones de lo qué hacer e i
 ## Benefits of the AWS Cloud
 
 
+Los 6 principales beneficios de AWS:
+
+- Trade upfront expense for variable expense: no necesitas gastar en hardware y todo lo que implica tener un servidor propio, solo pagas por los recursos que consumes.
+
+- Benefit from massive economies of scale: Debido a que AWS tiene un chingo de clientes y proveedores en la nube, esto se traduce en que los tratos son más convenientes, de modo que los costos son aún más bajos.
+
+- Stop guessing capacity: No tienes que preocuparte si tu servidor va a aguantar o no una carga de trabajo o aplicación nueva, en AWS basta con pedir más recursos y pagarlos, estos escalan de acuerdo a la demanda.
+
+- Increase speed and agility: te facilita desarrollar y desplegar aplicaciones nuevas, con más tiempo para experimentar e innovar.
+
+- Stop spending money running and maintaining data centers: tener un server propio requiere que todo el tiempo debas estar gastando tiempo, dinero y esfuerzo en manter la infraestructura física, con AWS te olvidas de esto y te enfocas en tus aplicaciones y tus clientes.
+
+- Go global in minutes: la presencia global de AWS te permite desplegar y proveer aplicaciones a tus clientes alrededor del mundo con la menor latencia posible.

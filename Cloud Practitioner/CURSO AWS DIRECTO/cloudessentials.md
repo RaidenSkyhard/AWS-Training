@@ -1202,3 +1202,30 @@ In this module, you will learn how to:
 
 ## AWS Well-Architected Framework
 
+Marco de trabajo que te ayuda a entender cómo diseñar y operar sistemas en AWS. Te ofrece una forma de como "medir" constantemente tu arquitectura basado en las best practices y principios de diseño e identificar áreas de mejora.
+
+Compuesto por 6 pilares:
+
+- Operational Excelence: habilidad para correr y monitorear tus sistemas para ofrecer valor comercial y continuar mejorando tus procesos y procedimientos. Algunos principios de diseño para esto son hacer las operaciones con código, hacer documentación, anticipar el fallo y frecuentemente hacer cambios pequeños y reversibles.
+
+- Security: habilidad de proteger información, sistemas y activos mientras se entregan valor comercial a través de evaluaciones de riesgo y estrategias de mitigación de los mismos. Algunas buenas prácticas son, automatizar las buenas prácticas de seguridad cuando sea posible, aplicar la seguridad a todos los niveles y proteger los datos en tránsito y que no circulen.
+
+- Reliability: recovery planning. Es la habilidad del sistema de recuperarse de disrupciones de servicio, adquirir recursos dinámicamente de acuerdo a la demanda y mitigar las disrupciones debido a configuraciones mal hechas o network issues.
+
+- Performance Efficiency: use the most efficient resources. Habilidad de usar los recursos que mejor cumplan con los requerimientos para mantener la eficiencia como cambios en la demanda o evolución tecnológica. Esto incluye experimentar más seguido con las arquitecturas serverless y diseñar sistemas que corran globalmente en minutos.
+
+- Cost Optimization: control where the money is spent. Habilidad de entregar valor comercial al menor precio posible. Incluye adoptar un modelo de consumo, analizar y atribuir gastos y, uso de servicios administrados para reducir costos de propiedad (on premises por ejemplo).
+
+- Sustainability: reduce the resource usage para el medio ambiente. Habilida de continuamente mejorar el impacto ambiental mediante un menor consumo de energía e incrementar la eficiencia de todos los componentes de una carga de trabajo para maximizar los beneficios de los recorsos que se tienen y optimizar y minimizar los recursos requeridos.
+
+
+### AWS Well architected tool
+
+Herramienta dentro de la consola de AWS con recomendaciones de lo qué hacer e identificar problemas potenciales.
+
+
+---
+
+## Benefits of the AWS Cloud
+
+

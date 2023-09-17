@@ -412,8 +412,12 @@ Esto es configurable, por ejemplo, puedes solo admitir tráfico de determinada p
 
 **DIFERENCIA ENTRE UN SECURITY GROUP Y UN NETWORK ACL**
 
-El security group es Stateful, lo que significa que va a almacenar en memoria lo que debe admitir o no, como una lista.
-El network ACL es Stateless, lo que se traduce en que sin importar las circunstancias, siempre va a revisar el contenido de los packages recibidos.
+El security group es Stateful, lo que significa que va a almacenar en memoria lo que debe admitir, como una lista.
+El network ACL es Stateless, lo que se traduce en que sin importar las circunstancias, siempre va a revisar el contenido de los packages recibidos PARA PERMITIRLO O DENEGARLO.
+
+**El security group corre sobre a nivel instancia y por defecto NO PERMITE Y DENIEGA el tráfico de red, NO PUEDES AGREGAR REGLAS DE DENEGACIÓN, SOLO DE CONTENIDO PERMITIDO**
+
+**LAS NACL Siguen un enfoque por defecto de permitir todo el tráfico y luego denegar explícitamente lo que necesitas. Puedes crear reglas de denegación explícita o permitir explícita.**
 
 El security group es como un guardia en la entrada al que le dices "ahorita regreso" mientras que el network ACL es más como el wey de migración que siempre checa si puedes entrar o no al gabacho.
 
@@ -642,7 +646,7 @@ El problema con utilizar las DB tradicionales para un análisis de uso de las DB
 
 Enables you to migrate relational databases, nonrelational databases, and other types of data stores.
 
-With AWS DMS, you move data between a source database and a target database. The source and target databases(opens in a new tab) can be of the same type or different types. During the migration, your source database remains operational, reducing downtime for any applications that rely on the database.
+With AWS DMS, you move data between a source database and a target database. The source and target databases can be of the same type or different types. During the migration, your source database remains operational, reducing downtime for any applications that rely on the database.
 
 Casos de uso para AWS DMS:
 
